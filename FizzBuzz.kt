@@ -1,3 +1,32 @@
+// Fizz Buzz Logic 2
+/**
+ * `validate` takes an integer, an array of integers, and a variable number of strings. It returns true
+ * if the integer is divisible by any of the integers in the array, and prints the corresponding string
+ * 
+ * @param num The number to be validated
+ * @param divisors Array<Int> = arrayOf(3, 5)
+ * @param display The strings to print if the number is divisible by the corresponding divisor.
+ * @return A boolean value.
+ */
+fun validate(num: Int, divisors: Array<Int>, vararg display: String): Boolean {
+    var satisfied: String? = null
+    divisors.forEachIndexed { index, divisor ->
+        if (num % divisor == 0) {print(display[index]); satisfied = "" }
+    }
+    satisfied ?: return false
+    return true
+}
+
+fun main() {
+    for (i in 1..100) {
+        val divisors = arrayOf(3,5)
+        val display = arrayOf("Fizz","Buzz")
+
+        if (!validate(i,divisors,*display)) print(i)
+        println()
+    }
+}
+
 // Fizz Buzz Logic 1
 
 /**
