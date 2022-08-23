@@ -1,3 +1,29 @@
+
+// Fizz Buzz Logic 3
+/**
+ * `displayData` takes a number and a map of integers to strings, if the number is divisible
+ * by the integer in map then it displays the String associated with that integer.
+ * If data is not in the map then display the number
+ *
+ * @param num The number to be validated
+ * @param details Map<Int, String>
+ */
+fun displayData(num: Int, details: Map<Int, String>) {
+    var satisfied: String? = null
+    details.forEach { divisor, display ->
+        if (num % divisor == 0) {print(display); satisfied = "" }
+    }
+    satisfied ?: print(num)
+    println()
+}
+
+fun main() {
+    for (i in 1..100) {
+        val details = mapOf(3 to "Fizz", 5 to "Buzz")
+        displayData(i,details)
+    }
+}
+
 // Fizz Buzz Logic 2
 /**
  * `validate` takes an integer, an array of integers, and a variable number of strings. It returns true
